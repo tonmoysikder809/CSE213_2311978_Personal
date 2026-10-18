@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="638.0" prefWidth="644.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213._starhotel_2311978.AddNewRoomViewController">
+   <children>
+      <TextField fx:id="roomNoTextField" layoutX="158.0" layoutY="33.0" />
+      <Text layoutX="29.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Room No:" />
+      <TextField fx:id="rateTextField" layoutX="158.0" layoutY="75.0" />
+      <Text layoutX="29.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Rate/Night ($):" />
+      <ComboBox fx:id="capacityComboBox" layoutX="467.0" layoutY="33.0" prefWidth="150.0" />
+      <Text layoutX="365.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Capacity:" />
+      <ComboBox fx:id="roomTypeComboBox" layoutX="467.0" layoutY="75.0" prefWidth="150.0" />
+      <Text layoutX="349.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Room Type:" />
+      <CheckBox fx:id="isSeaViewCheckBox" layoutX="31.0" layoutY="123.0" mnemonicParsing="false" text="Is it a Sea View Room?" />
+      <DatePicker fx:id="renovationDatePicker" layoutX="466.0" layoutY="118.0" prefHeight="26.0" prefWidth="152.0" />
+      <Text layoutX="321.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Renovation Date:" />
+      <Line endX="489.0" layoutX="126.0" layoutY="200.0" startX="-100.0" />
+      <ComboBox fx:id="minCapacityFilterComboBox" layoutX="187.0" layoutY="219.0" prefWidth="150.0" />
+      <Text layoutX="9.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Min Capacity to Filter:" />
+      <CheckBox fx:id="seaViewFilterCheckBox" layoutX="355.0" layoutY="219.0" mnemonicParsing="false" text="Should Consider Sea View Room to Filter?" />
+      <Button layoutX="31.0" layoutY="155.0" mnemonicParsing="false" onAction="#validateAndAddNewRoomButtonOnAction" prefHeight="30.0" prefWidth="579.0" text="Validate and Add New Room" />
+      <ComboBox fx:id="roomTypeFilterComboBox" layoutX="187.0" layoutY="253.0" prefWidth="150.0" />
+      <Text layoutX="9.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Room Type to Filter:" />
+      <Button layoutX="355.0" layoutY="251.0" mnemonicParsing="false" onAction="#filterAndLoadTableButtonOnAction" prefHeight="30.0" prefWidth="280.0" text="Filter and Load Table" />
+      <TableView fx:id="outputTableView" layoutX="9.0" layoutY="304.0" prefHeight="200.0" prefWidth="626.0">
+        <columns>
+          <TableColumn fx:id="roomIdTableColumn" prefWidth="102.0" text="Room ID" />
+          <TableColumn fx:id="capacityTableColumn" prefWidth="94.0" text="Capacity" />
+            <TableColumn fx:id="roomTypeTableColumn" prefWidth="136.0" text="Room Type" />
+            <TableColumn fx:id="isSeaViewTableColumn" prefWidth="117.0" text="Is Sea View Room?" />
+            <TableColumn fx:id="dorTableColumn" prefWidth="176.0" text="Date of Renovation" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
